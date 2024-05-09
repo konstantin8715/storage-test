@@ -1,11 +1,9 @@
 <template>
   <div class="d-flex justify-center align-center h-100">
-    <div class="main-block">
-      <!-- <button v-if="directoriesStore.rootNode.children.length == 0" @click="getChildren">add dir</button>
-      <ul v-else class="pl-10">
-        <node v-for="child in directoriesStore.rootNode.children" :node="child" />
-      </ul> -->
-      <node :node="directoriesStore.rootNode" />
+    <div class="main-block d-flex justify-center align-center">
+      <div class="content-block">
+        <node :node="directoriesStore.rootNode" />
+      </div>
     </div>
   </div>
 </template>
@@ -37,10 +35,17 @@ export default {
 @import "colors";
 
 .main-block {
-  // border: 2px solid $dark-primary;
-  border-radius: 10px;
-  background: $light-primary;
-  width: 700px;
-  height: 500px;
+  border-radius: 5px;
+  background: white;
+  opacity: 0.3;
+  width: 450px;
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.content-block {
+  width: 90%;
+  height: 90%;
 }
 </style>
