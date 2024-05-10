@@ -1,10 +1,34 @@
 <template>
   <div class="node-block">
-    <span>{{ node.name }}</span>
-    <button v-if="node.children" class="btn" @click="addDir">add dir</button>
-    <ul>
-      <node class="ml-2" v-for="child in node.children" :node="child" />
-    </ul>
+    <template v-if="!node.isRoot">
+      <template v-if="node.type == 'dir'">
+        <v-icon
+          v-if="!isChildrenOpen"
+          icon="mdi-chevron-right"
+          @click="isChildrenOpen = true"
+        />
+        <v-icon
+          v-else
+          icon="mdi-chevron-down"
+          @click="isChildrenOpen = false"
+        />
+      </template>
+
+      <v-icon v-if="node.type == 'dir'" icon="mdi-folder" />
+      <v-icon v-else icon="mdi-file" />
+
+      <span class="ml-1">{{ node.name }}</span>
+
+      <div v-if="isChildrenOpen" class="children-node-block ml-2">
+        <node v-for="child in node.children" :node="child" />
+      </div>
+    </template>
+    <!-- <button v-if="node.children" class="btn" @click="addDir">add dir</button> -->
+    <template v-else>
+      <div class="ml-2">
+        <node v-for="child in node.children" :node="child" />
+      </div>
+    </template>
   </div>
 </template>
 
@@ -13,7 +37,9 @@ export default {
   name: "node",
   components: {},
   data() {
-    return {};
+    return {
+      isChildrenOpen: false,
+    };
   },
 
   props: {
@@ -35,8 +61,13 @@ export default {
 @import "../colors";
 
 .node-block {
-    width: 100%;
-    color: black;
-    // background: $dark-primary;
+  width: 100%;
+  color: black;
+  // border-left: solid black;
+  // background: $dark-primary;
+}
+
+.children-node-block {
+  border-left: solid black;
 }
 </style>

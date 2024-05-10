@@ -21,12 +21,10 @@ export default {
   },
 
   methods: {
-    getChildren() {
-      this.directoriesStore.rootNode.addDir("dir1");
-      this.directoriesStore.rootNode.children[0].addDir("dir1-1");
-      this.directoriesStore.rootNode.children[0].children[0].addDir("dir1-1-1");
-      this.directoriesStore.rootNode.children[0].children[0].addFile("file1-1-2");
-    },
+  },
+
+  created() {
+    this.directoriesStore.init();
   },
 };
 </script>
