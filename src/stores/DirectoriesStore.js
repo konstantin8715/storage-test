@@ -10,6 +10,7 @@ export const useDirectoriesStore = defineStore("useDirectoriesStore", {
 
   actions: {
     init() {
+      this.rootNode.id = 1;
       const dir1 = this.rootNode.addDir("Dir 1");
       const dir11 = dir1.addDir("Dir 1-1");
       const file111 = dir11.addFile("File 1-1-1");
@@ -22,44 +23,3 @@ export const useDirectoriesStore = defineStore("useDirectoriesStore", {
     },
   },
 });
-
-/*
-const rootDir = {
-    type: dir,
-    children: [
-        {
-            type: dir,
-            label: 'dir1',
-            children: [
-                {
-                    type: dir,
-                    label: 'dir1-1',
-                    children: [],
-                },
-                {
-                    label: 'dir1-2',
-                    children: [],
-                },
-                {
-                    label: 'file1-3',
-                },
-            ]
-        },
-
-        {
-            label: 'dir2',
-            children: [
-                {
-                    label: 'dir2-1',
-                },
-                {
-                    label: 'dir2-2',
-                },
-                {
-                    label: 'file2-3',
-                },
-            ]
-        }
-    ]
-}
-*/

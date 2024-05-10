@@ -1,4 +1,7 @@
-export function File(name) {
-  this.name = name;
-  this.type = 'file';
+export class File {
+  constructor(name) {
+    this.name = name;
+    this.parent = null;
+    this.type = "file";
+  }
 }

@@ -1,7 +1,33 @@
-# Vue 3 + Vite
+### Шаг 1: Скачать архив проекта
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Скачивание архива с github](https://habrastorage.org/webt/62/a2/d2/62a2d24bf14e8982881903.png)
+  
 
-## Recommended IDE Setup
+### Шаг 2: Необходимо разархивировать папку и перейти в нее'
+```bash
+% cd storage-test
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+### Шаг 3: Выполнить команду npm install
+
+```bash
+
+% npm install
+
+```
+
+### Шаг 3: Выполнить команду npm run dev
+
+```bash
+
+% npm run dev
+
+```
+
+### Шаг 5: Перейти на страницу с приложением в браузере
+
+```bash
+
+http://localhost:5173
+
+```

@@ -1,20 +1,27 @@
 import { File } from "./File.js";
 
-export function Dir(name) {
-  this.name = name;
-  this.children = [];
-  this.isRoot = false;
-  this.type = 'dir';
+export class Dir {
+  constructor(name) {
+    this.name = name;
+    this.parent = null;
+    this.children = [];
+    this.isRoot = false;
+    this.type = "dir";
+  }
 
-  this.addDir = function (name) {
+  addDir(name) {
     const dir = new Dir(name);
     this.children.push(dir);
+    dir.parent = this;
+    dir.id = this.id * 10 + this.children.length;
     return dir;
   };
 
-  this.addFile = function (name) {
+  addFile(name) {
     const file = new File(name);
     this.children.push(file);
+    file.parent = this;
+    file.id = this.id * 10 + this.children.length;
     return file;
   };
 }

@@ -1,6 +1,7 @@
 <template>
-  <div class="d-flex justify-center align-center h-100">
-    <div class="main-block d-flex justify-center align-center">
+  <div class="d-flex justify-center align-center flex-column h-100">
+    <div>Чтобы сделать действие с папкой/файлом, нажмите на него правой кнопокой мыши</div>
+    <div class="main-block d-flex justify-center align-center mt-4">
       <div class="content-block">
         <node :node="directoriesStore.rootNode" />
       </div>
@@ -20,9 +21,6 @@ export default {
     };
   },
 
-  methods: {
-  },
-
   created() {
     this.directoriesStore.init();
   },
@@ -30,8 +28,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "colors";
-
 .main-block {
   border-radius: 5px;
   background: white;
